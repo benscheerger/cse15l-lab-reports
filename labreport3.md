@@ -188,5 +188,81 @@ This command returns all empty files and directories, which is useful if you wan
 
 This command returns only empty directories because of the `-type d` distinction, which is useful if you want to find empty/unused directories.
 
+# Sources Used
+
+For all the find commands I used ChatGPT to help me research them. My prompts and outputs are below. I basically only used this to research options for the find command.
+
+## Chat History
+
+User
+what are some interesting command line options for the find command in bash
+
+ChatGPT
+The find command in Bash is quite versatile and offers various options for searching files and directories. Here are some interesting command line options you might find useful:
+
+-name: Allows you to search for files by name. You can use wildcards like * for pattern matching.
+
+Example: find . -name "*.txt"
+
+-type: Restricts the search to a specific type of file, such as regular files (f), directories (d), symbolic links (l), etc.
+
+Example: find . -type d (to find only directories)
+
+-size: Lets you search for files based on their size. You can specify the size in bytes, kilobytes, megabytes, etc.
+
+Example: find . -size +1M (to find files larger than 1 megabyte)
+
+-exec: Executes a command on each found file or directory.
+
+Example: find . -name "*.txt" -exec cp {} /path/to/destination \; (copies all .txt files to a destination directory)
+
+-mtime and -mmin: Allows you to search for files based on modification time or modification time in minutes, respectively.
+
+Example: find . -mtime -1 (to find files modified in the last 24 hours)
+
+-delete: Deletes the found files or directories.
+
+Example: find . -name "*.tmp" -delete (deletes all .tmp files)
+
+-printf: Prints information about the found files in a specified format.
+
+Example: find . -name "*.log" -printf "%p\t%s\n" (prints the name and size of all .log files)
+
+These are just a few examples of the many options available with the find command. It's a powerful tool for searching and manipulating files and directories from the command line.
+
+User
+You
+what other options are there
+
+ChatGPT
+Apart from the -size option, there are numerous other options available with the find command in Bash. Here are some commonly used ones:
+
+-name: Allows you to search for files by name. You can use wildcards like * for pattern matching.
+
+-type: Restricts the search to a specific type of file, such as regular files (f), directories (d), symbolic links (l), etc.
+
+-exec: Executes a command on each found file or directory.
+
+-mtime and -mmin: Allows you to search for files based on modification time or modification time in minutes, respectively.
+
+-delete: Deletes the found files or directories.
+
+-printf: Prints information about the found files in a specified format.
+
+-maxdepth and -mindepth: Specifies the maximum and minimum depth of directory traversal.
+
+-perm: Searches for files based on permissions.
+
+-user and -group: Searches for files owned by a specific user or group.
+
+-empty: Finds empty files and directories.
+
+-regex: Searches for files matching a regular expression pattern.
+
+-regex: Searches for files matching a regular expression pattern.
+
+These are just a few examples of the many options available with the find command. It's a powerful tool for searching and manipulating files and directories from the command line. Each option provides different functionalities to tailor your search criteria according to your needs.
+
+
 
 
